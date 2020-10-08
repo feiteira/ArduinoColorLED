@@ -7,7 +7,6 @@ int ledG= 14;// the PWM pin the LED is attached to
 int ledB= 12;// the PWM pin the LED is attached to
 
 const int RGB_VALUES [] = {0,86,172,255};
-int RGB_MATRIX[64][3];
 
 int COLOR_CIRCLE[1024][3];
 
@@ -58,17 +57,6 @@ void setup() {
  // pinMode(in, INPUT);
   Serial.begin(9600);
   init_circle();
-  int pos;
-  for(int ir = 0; ir < 4; ir++){
-      for(int ig = 0; ig < 4; ig++){
-          for(int ib = 0; ib < 4; ib++){
-            pos = (ir * 16) + (ig * 4) + ib;
-            RGB_MATRIX[pos][0] = RGB_VALUES[ir]; 
-            RGB_MATRIX[pos][1] = RGB_VALUES[ig]; 
-            RGB_MATRIX[pos][2] = RGB_VALUES[ib]; 
-          }
-      }
-  }
 }
 
 void setColor(int r,int g, int b){
